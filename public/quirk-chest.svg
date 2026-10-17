@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520">
+<defs>
+ <radialGradient id="bg" cx="50%" cy="43%" r="56%"><stop stop-color="#4fd7f5"/><stop offset=".45" stop-color="#1e9cd9"/><stop offset="1" stop-color="#0c5f9e"/></radialGradient>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8a4f20"/><stop offset="1" stop-color="#4c2712"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe45d"/><stop offset=".45" stop-color="#f7a917"/><stop offset="1" stop-color="#b96708"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="16"/></filter>
+</defs>
+<rect width="700" height="520" rx="32" fill="url(#bg)"/>
+<ellipse cx="350" cy="235" rx="230" ry="165" fill="#ffe974" opacity=".36" filter="url(#glow)"/>
+<g transform="translate(145 110)">
+ <path d="M40 152V83C40 22 331 15 370 84v68z" fill="url(#wood)" stroke="#8d4c11" stroke-width="16"/>
+ <path d="M52 112h308v42H52z" fill="url(#gold)"/>
+ <rect x="27" y="147" width="356" height="205" rx="18" fill="url(#wood)" stroke="#8d4c11" stroke-width="15"/>
+ <path d="M27 176h356v35H27zM27 292h356v35H27z" fill="url(#gold)"/>
+ <path d="M58 147v205M348 147v205" stroke="url(#gold)" stroke-width="27"/>
+ <rect x="174" y="215" width="68" height="93" rx="12" fill="url(#gold)" stroke="#a45b07" stroke-width="8"/>
+ <circle cx="208" cy="246" r="11" fill="#70410d"/><rect x="202" y="245" width="12" height="34" rx="5" fill="#70410d"/>
+ <g fill="url(#gold)" stroke="#c9800c" stroke-width="4"><circle cx="122" cy="194" r="27"/><circle cx="165" cy="192" r="26"/><circle cx="250" cy="186" r="25"/><circle cx="286" cy="202" r="24"/></g>
+ <path d="M269 157l28 33-28 35-28-35z" fill="#d75cff" stroke="#7f35d9" stroke-width="5"/>
+ <rect x="308" y="118" width="88" height="123" rx="12" transform="rotate(10 308 118)" fill="#eafcff" stroke="#2ec0f3" stroke-width="8"/>
+ <circle cx="351" cy="157" r="22" fill="#ef4d3d"/><path d="M322 202c23-39 49-43 77-7v29h-77z" fill="#ef6e9b"/><path d="M333 189c15-31 32-52 51-74 18 19 22 41 18 61-21-8-45-4-69 13z" fill="#4b77a8"/>
+ </g>
+</g>
+<g fill="url(#gold)"><circle cx="115" cy="410" r="28"/><circle cx="153" cy="430" r="25"/><circle cx="535" cy="415" r="28"/><circle cx="575" cy="431" r="22"/></g>
+</svg>
