@@ -1,0 +1,1 @@
+.bottomNav{grid-template-columns:repeat(6,1fr)!important;padding-left:8px!important;padding-right:8px!important}.navItem{text-decoration:none!important;min-width:0}.navItem span{font-size:8px}.navItem svg{flex:0 0 auto}@media(max-width:380px){.bottomNav{padding-left:4px!important;padding-right:4px!important}.navItem{gap:3px}.navItem span{font-size:7.5px}}
