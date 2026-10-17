@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 590">
+<defs>
+ <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#08b9f2"/><stop offset=".45" stop-color="#078bd2"/><stop offset="1" stop-color="#025a9b"/></linearGradient>
+ <radialGradient id="waterGlow" cx="45%" cy="35%" r="72%"><stop stop-color="#65e7ff" stop-opacity=".34"/><stop offset="1" stop-color="#0075bd" stop-opacity="0"/></radialGradient>
+ <linearGradient id="grass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8e965"/><stop offset=".48" stop-color="#72c84a"/><stop offset="1" stop-color="#2f8b39"/></linearGradient>
+ <linearGradient id="desert" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd66c"/><stop offset=".55" stop-color="#e8a83f"/><stop offset="1" stop-color="#bd7628"/></linearGradient>
+ <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#c9efff"/></linearGradient>
+ <filter id="landShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="7" stdDeviation="4" flood-color="#003c66" flood-opacity=".62"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+ <filter id="smallShadow"><feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#003451" flood-opacity=".5"/></filter>
+ <pattern id="waves" width="55" height="35" patternUnits="userSpaceOnUse"><path d="M0 18c9-8 18-8 27 0s18 8 28 0" fill="none" stroke="#8aeaff" stroke-width="1.2" opacity=".14"/></pattern>
+ <g id="tree"><path d="M0 9L5 0l5 9H7l4 7H-1l4-7z" fill="#176d38"/><rect x="4" y="15" width="2" height="5" rx="1" fill="#6b4427"/></g>
+ <g id="pine"><path d="M0 13L6 0l6 13H9l5 8H-2l5-8z" fill="#126b42"/><path d="M2 10l4-8 4 8z" fill="#27925a"/><rect x="5" y="20" width="2" height="5" fill="#604324"/></g>
+ <g id="mount"><path d="M0 20L14 0l15 20z" fill="#748b8e"/><path d="M14 0l6 8-5-2-4 5-4-3z" fill="#fff"/></g>
+ <g id="palm"><path d="M6 7c-7-6-8-1-1 2-9-1-8 4 0 3-6 6-2 8 3 2 1 8 5 6 4-1 7 5 9 1 3-2 7-3 4-7-2-4z" fill="#2c9d4d"/><path d="M7 11c2 6 1 12-1 20" fill="none" stroke="#86551f" stroke-width="3"/></g>
+</defs>
+<rect width="430" height="590" rx="26" fill="url(#ocean)"/>
+<rect width="430" height="590" rx="26" fill="url(#waterGlow)"/>
+<rect width="430" height="590" rx="26" fill="url(#waves)"/>
+<g fill="#dff9ff" opacity=".92" filter="url(#smallShadow)"><path d="M-15 43c19-18 49-20 64-5 22-13 51-1 55 18H-8z"/><path d="M330 80c12-15 35-15 45-1 22-10 45 1 49 18h-105z"/><path d="M-8 374c14-18 37-16 47-2 23-12 47 1 51 19H-8z"/><path d="M350 515c10-13 29-13 38-1 17-9 35 0 39 14h-83z"/></g>
+
+<!-- Continents / islands -->
+<g stroke="#d7f38c" stroke-width="4" stroke-linejoin="round" filter="url(#landShadow)">
+ <path d="M26 105l29-35 54-4 24 12 17 20 23-2 17 29-10 28-29 13-9 27-29 6-21-18-35 5-28-25-6-28z" fill="url(#grass)"/>
+ <path d="M119 210l36-16 32 16 10 38-18 31-9 46-25 48-18-18 9-49-20-38z" fill="url(#grass)"/>
+ <path d="M214 100l28-17 31 5 22 20-8 23-30 14-31-7-15-20z" fill="url(#grass)"/>
+ <path d="M226 151l42-8 35 18 2 49-25 54-31 5-26-31-7-49z" fill="url(#grass)"/>
+ <path d="M274 83l48-22 65 18 37 30-11 36-35 14-7 27-38 9-18-21-37-2-16-31z" fill="url(#grass)"/>
+ <path d="M331 275l34-14 37 17 8 33-32 27-39-10-14-29z" fill="url(#grass)"/>
+ <path d="M60 403l25-20 42 4 32 23 0 42-36 19-45-12-24-28z" fill="url(#desert)"/>
+ <path d="M293 382l28-18 40 8 24 27-5 40-32 27-42-10-24-31z" fill="url(#desert)"/>
+ <path d="M192 67l17-13 22 4 8 20-14 18-23-3-13-14z" fill="url(#snow)"/>
+</g>
+
+<!-- coast highlights -->
+<g fill="none" stroke="#efffc7" stroke-width="1.7" opacity=".7"><path d="M38 105c29-34 65-38 111-7"/><path d="M281 88c47-25 88-13 128 21"/><path d="M67 409c36-23 64-14 91 4"/></g>
+
+<!-- snow / mountains -->
+<g filter="url(#smallShadow)"><use href="#mount" x="75" y="82" transform="scale(.8)"/><use href="#mount" x="91" y="86" transform="scale(.68)"/><use href="#mount" x="111" y="92" transform="scale(.6)"/><use href="#mount" x="325" y="91" transform="scale(.78)"/><use href="#mount" x="348" y="98" transform="scale(.66)"/><use href="#mount" x="156" y="228" transform="scale(.56)"/><use href="#mount" x="272" y="167" transform="scale(.7)"/><use href="#mount" x="342" y="299" transform="scale(.55)"/></g>
+
+<!-- forest clusters -->
+<g filter="url(#smallShadow)">
+ <use href="#tree" x="53" y="126"/><use href="#pine" x="69" y="113"/><use href="#tree" x="87" y="136"/><use href="#pine" x="109" y="121"/><use href="#tree" x="129" y="150"/>
+ <use href="#pine" x="239" y="112"/><use href="#tree" x="258" y="118"/><use href="#pine" x="285" y="105"/>
+ <use href="#pine" x="307" y="113"/><use href="#tree" x="328" y="125"/><use href="#pine" x="351" y="112"/><use href="#tree" x="375" y="132"/>
+ <use href="#tree" x="246" y="182"/><use href="#tree" x="268" y="201"/><use href="#pine" x="278" y="165"/><use href="#tree" x="250" y="227"/>
+ <use href="#palm" x="66" y="416"/><use href="#palm" x="109" y="435"/><use href="#palm" x="316" y="405"/><use href="#palm" x="355" y="423"/>
+</g>
+
+<!-- landmarks -->
+<g filter="url(#smallShadow)">
+ <g transform="translate(58 155) scale(.55)" stroke="#6d452d" stroke-width="3" fill="none"><path d="M20 0L2 66M20 0l18 66M7 48h27M12 31h16M4 66h34"/><path d="M12 66c3-13 13-13 16 0"/></g>
+ <g transform="translate(91 420)" fill="#c18331" stroke="#8e5d25" stroke-width="1"><path d="M0 22L17 0l17 22z"/><path d="M11 22L24 6l13 16z"/></g>
+ <g transform="translate(326 402) scale(.75)" fill="#677277" stroke="#49555a" stroke-width="1"><path d="M0 27L15 0l15 27z"/><path d="M22 31L39 4l16 27z"/></g>
+</g>
+
+<!-- volcano -->
+<g transform="translate(305 121)" filter="url(#smallShadow)"><ellipse cx="9" cy="13" rx="31" ry="28" fill="#ff5b27" opacity=".15"/><path d="M-16 24L7-17 32 24z" fill="#4c352e"/><path d="M-2 4L7-12 17 4z" fill="#ff6a18"/><path d="M7-14c-12-18 6-27 1-40 17 13 20 31 9 44z" fill="#ffd83c"/><path d="M7-9c-8-11 3-18 2-26 9 8 11 20 5 28z" fill="#ff6430"/></g>
+
+<!-- quest dotted route -->
+<g stroke="#ffd739" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="2 14" filter="url(#smallShadow)"><path d="M100 191C119 225 130 312 126 390"/><path d="M128 390C190 449 285 459 341 331"/></g>
+
+<!-- ocean labels -->
+<g font-family="Arial,sans-serif" font-size="13" font-weight="700" font-style="italic" fill="#8bdcff" opacity=".88"><text x="11" y="212">Atlantic</text><text x="338" y="204">Pacific</text><text x="191" y="365">Indian Ocean</text></g>
+
+<!-- compass -->
+<g transform="translate(43 494)" opacity=".75" stroke="#9eeaff" fill="none"><circle r="27" stroke-width="2"/><path d="M0-23L6 0 0 23-6 0zM-23 0L0-6 23 0 0 6z" fill="#55c7ff" stroke-width="1"/><text x="-4" y="-32" fill="#bcecff" stroke="none" font-family="Arial" font-size="10">N</text></g>
+
+<!-- whale and boat -->
+<path d="M165 505c18-16 39-10 50 2 11-10 23-9 31 0-14 3-20 11-27 17-20 13-45 9-54-19z" fill="#034a85" opacity=".78"/><circle cx="190" cy="508" r="2" fill="#82dfff"/>
+<g transform="translate(337 485) rotate(-12)" filter="url(#smallShadow)"><path d="M0 24h52L37 39H10z" fill="#7a451d"/><path d="M13 0h3v24h-3z" fill="#49301f"/><path d="M16 3l25 13H16z" fill="#fff1b8"/><path d="M17 18l19 0" stroke="#d95b2d" stroke-width="2"/></g>
+
+<!-- tiny islands -->
+<g fill="#80cc4b" stroke="#d7f38c" stroke-width="2"><ellipse cx="198" cy="130" rx="10" ry="5"/><ellipse cx="311" cy="247" rx="7" ry="4"/><ellipse cx="181" cy="382" rx="6" ry="3"/><ellipse cx="391" cy="232" rx="8" ry="4"/></g>
+</svg>

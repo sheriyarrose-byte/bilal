@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './quirk.css';
+import './navfix.css';
+import './premium.css';
 
 export const metadata: Metadata = {
-  title: 'La Tradition â Boulangerie-pÃ¢tisserie Ã  Nice',
-  description: 'La Tradition, boulangerie-pÃ¢tisserie au 27 Avenue des Diables Bleus Ã  Nice. DÃ©couvrez lâadresse, les horaires et lâunivers de la maison.',
-  alternates: { canonical: '/' },
-  openGraph: { title: 'La Tradition â Le goÃ»t de la tradition, chaque jour.', description: 'Boulangerie-pÃ¢tisserie Ã  Nice.', type: 'website', locale: 'fr_FR' }
+  title: 'Quirk Arena Mobile Preview',
+  description: 'Interactive Quirk Arena mobile game preview with map quests, quizzes, rewards, collections, world chat and friend chat.'
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="fr"><body>{children}</body></html>;
+  return <html lang="en"><body>{children}</body></html>;
 }
