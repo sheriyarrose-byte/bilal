@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 590">
+<defs>
+ <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0aa3ee"/><stop offset="1" stop-color="#066db6"/></linearGradient>
+ <linearGradient id="land" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9adb55"/><stop offset="1" stop-color="#4da02f"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#003c6d" flood-opacity=".55"/></filter>
+ <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<rect width="430" height="590" rx="26" fill="url(#ocean)"/>
+<g opacity=".18" fill="#fff"><circle cx="35" cy="45" r="2"/><circle cx="95" cy="104" r="1.5"/><circle cx="344" cy="66" r="2"/><circle cx="367" cy="342" r="1.7"/><circle cx="137" cy="476" r="2"/></g>
+<g fill="#d9f6ff" opacity=".88">
+ <path d="M5 57c20-19 52-17 65 3 26-12 50 0 53 18H7z"/>
+ <path d="M317 109c14-17 38-16 49 0 21-10 47 2 51 18H309z"/>
+ <path d="M12 395c11-15 32-15 43-2 21-11 42 1 46 16H5z"/>
+</g>
+<g fill="url(#land)" stroke="#b8ed73" stroke-width="4" filter="url(#shadow)">
+ <path d="M38 104l27-32 48 3 29 21 23-4 19 25-14 34-30 9-10 28-29 10-18-18-31 0-20-28 6-48z"/>
+ <path d="M126 215l34-15 32 14 5 35-18 27-10 47-27 46-16-24 9-43-17-37z"/>
+ <path d="M221 102l25-16 27 4 20 22-12 23-27 8-25-17z"/>
+ <path d="M228 151l46-10 29 18 1 50-25 51-28 9-26-31-7-48z"/>
+ <path d="M277 85l46-20 57 17 35 28-9 37-39 10-4 27-38 7-20-24-34-3-13-33z"/>
+ <path d="M332 276l33-14 37 20 2 31-31 25-38-12-13-28z"/>
+</g>
+<g fill="#1e8d47" opacity=".8">
+ <circle cx="91" cy="122" r="6"/><circle cx="119" cy="149" r="5"/><circle cx="274" cy="191" r="7"/><circle cx="349" cy="118" r="7"/><circle cx="361" cy="299" r="7"/>
+</g>
+<g fill="#ffefbe" opacity=".75"><path d="M0 520c90-18 145-10 222 13s139 24 208 5v52H0z"/></g>
+<g stroke="#ffd84e" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="3 13" opacity=".95"><path d="M87 184C121 225 123 344 157 430"/><path d="M158 430C244 459 315 408 357 330"/></g>
+<g font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#bce7ff" opacity=".75"><text x="11" y="202">Atlantic</text><text x="331" y="190">Pacific</text><text x="197" y="407">Indian Ocean</text></g>
+<g transform="translate(298 107)"><ellipse cx="0" cy="0" rx="38" ry="38" fill="#ff5a22" opacity=".2" filter="url(#glow)"/><path d="M-18 17L0-23 21 18z" fill="#54352a"/><path d="M-7 2L0-14 8 2z" fill="#ff6d18"/><path d="M-4-14C-14-29 6-31 2-45c13 12 15 25 5 35z" fill="#ffda37"/></g>
+<g transform="translate(348 451) rotate(-12)"><path d="M0 24h53L36 40H11z" fill="#78451f"/><path d="M12 0h3v24h-3z" fill="#492b18"/><path d="M15 2l26 14H15z" fill="#fff4c5"/></g>
+</svg>
