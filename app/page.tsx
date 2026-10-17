@@ -17,6 +17,7 @@ import {
   LockKeyhole,
   Gem,
   Star,
+  MessageCircle,
 } from "lucide-react";
 
 type Screen = "map" | "quiz" | "reward" | "collection";
@@ -61,16 +62,29 @@ function BottomNav({ screen, setScreen }: { screen: Screen; setScreen: (screen: 
     { key: "collection" as Screen, label: "Collection", icon: Library },
     { key: "quiz" as Screen, label: "Arena", icon: Swords },
     { key: "reward" as Screen, label: "Shop", icon: ShoppingBag },
-    { key: "map" as Screen, label: "Profile", icon: UserRound },
+    { key: "chat", label: "Chat", icon: MessageCircle, href: "/chat" },
+    { key: "profile", label: "Profile", icon: UserRound },
   ];
 
   return (
     <nav className="bottomNav">
       {items.map((item, index) => {
         const Icon = item.icon;
-        const active = screen === item.key && !(screen === "map" && item.label === "Profile");
+        if (item.href) {
+          return (
+            <a key={`${item.label}-${index}`} className="navItem" href={item.href} aria-label="Open chat">
+              <Icon size={19} strokeWidth={2.5} />
+              <span>{item.label}</span>
+            </a>
+          );
+        }
+        const active = item.key === screen;
         return (
-          <button key={`${item.label}-${index}`} className={active ? "navItem active" : "navItem"} onClick={() => setScreen(item.key)}>
+          <button
+            key={`${item.label}-${index}`}
+            className={active ? "navItem active" : "navItem"}
+            onClick={() => item.key === "profile" ? undefined : setScreen(item.key as Screen)}
+          >
             <Icon size={19} strokeWidth={2.5} />
             <span>{item.label}</span>
           </button>
@@ -219,7 +233,7 @@ export default function Home() {
         {screen === "collection" && <CollectionScreen setScreen={setScreen} />}
         <div className="homeIndicator" />
       </div>
-      <div className="previewHint">Interactive mobile preview · tap pins, answers, rewards and collection tabs.</div>
+      <div className="previewHint">Interactive mobile preview · tap pins, answers, rewards, collection and chat.</div>
     </main>
   );
 }
