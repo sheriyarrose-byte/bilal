@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './quirk.css';
 
 export const metadata: Metadata = {
   title: 'Quirk Arena Mobile Preview',
