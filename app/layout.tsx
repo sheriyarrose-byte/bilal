@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}<a className="globalChatFab" href="/chat" aria-label="Open World Chat"><span>💬</span><b>Chat</b><small>1,248 online</small></a></body></html>;
+  return <html lang="en"><body>{children}</body></html>;
 }
