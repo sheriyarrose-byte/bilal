@@ -14,7 +14,6 @@ import {
   Play,
   X,
   Check,
-  Trophy,
   LockKeyhole,
   Gem,
   Star,
@@ -22,10 +21,7 @@ import {
 
 type Screen = "map" | "quiz" | "reward" | "collection";
 
-type QuizChoice = {
-  label: string;
-  correct?: boolean;
-};
+type QuizChoice = { label: string; correct?: boolean };
 
 const quizChoices: QuizChoice[] = [
   { label: "Berlin" },
@@ -72,7 +68,7 @@ function BottomNav({ screen, setScreen }: { screen: Screen; setScreen: (screen: 
     <nav className="bottomNav">
       {items.map((item, index) => {
         const Icon = item.icon;
-        const active = screen === item.key && (item.label !== "Profile" || screen === "map") && !(screen === "map" && item.label === "Profile");
+        const active = screen === item.key && !(screen === "map" && item.label === "Profile");
         return (
           <button key={`${item.label}-${index}`} className={active ? "navItem active" : "navItem"} onClick={() => setScreen(item.key)}>
             <Icon size={19} strokeWidth={2.5} />
@@ -85,10 +81,10 @@ function BottomNav({ screen, setScreen }: { screen: Screen; setScreen: (screen: 
 }
 
 function Pin({ type, label, className, onClick }: { type: "quiz" | "boss" | "treasure" | "challenge"; label: string; className: string; onClick: () => void }) {
-  const icon = type === "quiz" ? "🏛️" : type === "boss" ? "👹" : type === "treasure" ? "🎁" : "🏁";
+  const icon = type === "quiz" ? "🏛️" : type === "boss" ? "☠" : type === "treasure" ? "▣" : "⚑";
   return (
     <button className={`mapPin ${type} ${className}`} onClick={onClick}>
-      <span className="pinIcon">{icon}</span>
+      <span className="pinIcon"><b>{icon}</b></span>
       <strong>{label}</strong>
     </button>
   );
@@ -100,16 +96,8 @@ function WorldMap({ setScreen }: { setScreen: (screen: Screen) => void }) {
       <TopBar />
       <button className="dailyBadge"><Gift size={17} /> <span>Daily<br/>Reward</span><i /></button>
 
-      <div className="worldMap" aria-label="stylized world map">
-        <div className="cloud c1" /><div className="cloud c2" /><div className="cloud c3" />
-        <div className="continent northAmerica" />
-        <div className="continent southAmerica" />
-        <div className="continent europe" />
-        <div className="continent africa" />
-        <div className="continent asia" />
-        <div className="continent australia" />
-        <div className="volcano">🌋</div>
-        <div className="boat">⛵</div>
+      <div className="worldMap">
+        <img src="/quirk-world-map.svg" alt="Quirk Arena illustrated world map" className="mapArtwork" />
         <Pin type="quiz" label="Quiz" className="pinQuiz" onClick={() => setScreen("quiz")} />
         <Pin type="boss" label="Boss" className="pinBoss" onClick={() => setScreen("quiz")} />
         <Pin type="treasure" label="Treasure" className="pinTreasure" onClick={() => setScreen("reward")} />
@@ -117,7 +105,7 @@ function WorldMap({ setScreen }: { setScreen: (screen: Screen) => void }) {
       </div>
 
       <div className="dailyCard">
-        <div className="dailyThumb">🗼</div>
+        <div className="dailyThumb"><img src="/quirk-eiffel.svg" alt="Paris challenge" /></div>
         <div className="dailyCopy">
           <small>🎁 Daily Reward ready</small>
           <strong>Paris Quiz · 5 questions</strong>
@@ -131,7 +119,7 @@ function WorldMap({ setScreen }: { setScreen: (screen: Screen) => void }) {
 }
 
 function QuizScreen({ setScreen }: { setScreen: (screen: Screen) => void }) {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>("Paris");
   const correct = selected === "Paris";
 
   return (
@@ -144,11 +132,7 @@ function QuizScreen({ setScreen }: { setScreen: (screen: Screen) => void }) {
       </div>
 
       <div className="landmarkCard">
-        <div className="eiffelScene">
-          <div className="sunGlow" />
-          <div className="eiffel">🗼</div>
-          <div className="treeRow">🌳🌳🌳🌳🌳</div>
-        </div>
+        <img src="/quirk-eiffel.svg" alt="Eiffel Tower in Paris" />
       </div>
 
       <h2 className="questionTitle">Which city is this landmark in?</h2>
@@ -170,11 +154,8 @@ function QuizScreen({ setScreen }: { setScreen: (screen: Screen) => void }) {
         <button className="adBtn"><Play size={18} fill="currentColor" /> Watch ad to<br/>revive</button>
       </div>
 
-      {selected && (
-        <button className={correct ? "continueBtn visible" : "continueBtn visible wrongCta"} onClick={() => correct ? setScreen("reward") : setSelected(null)}>
-          {correct ? "Great! Claim reward" : "Try again"}
-        </button>
-      )}
+      {selected && !correct && <button className="continueBtn visible wrongCta" onClick={() => setSelected(null)}>Try again</button>}
+      {selected && correct && <button className="continueBtn visible" onClick={() => setScreen("reward")}>Claim reward</button>}
     </div>
   );
 }
@@ -183,13 +164,8 @@ function RewardScreen({ setScreen }: { setScreen: (screen: Screen) => void }) {
   return (
     <div className="rewardScreen screen">
       <button className="closeButton rewardClose" onClick={() => setScreen("map")}><X size={21} /></button>
-      <div className="rewardBurst" />
       <h1>Treasure<br/>Chest!</h1>
-      <div className="chestWrap">
-        <div className="chestGlow" />
-        <div className="chest">🧰</div>
-        <div className="coinSpark s1">●</div><div className="coinSpark s2">●</div><div className="coinSpark s3">●</div>
-      </div>
+      <div className="chestWrap"><img src="/quirk-chest.svg" alt="Treasure chest full of Quirk Arena rewards" /></div>
       <div className="rewardItems">
         <div><Coins size={35} fill="currentColor" /><strong>+100 Coins</strong></div>
         <div><Gem size={35} fill="currentColor" /><strong>+1 Gem</strong></div>
@@ -211,18 +187,18 @@ function CollectionScreen({ setScreen }: { setScreen: (screen: Screen) => void }
       <div className="collectionTitle">
         <div className="stackedCards">🌍</div>
         <div><h1>Your Cards</h1><strong>12 / 195</strong></div>
-        <div className="completeMeter"><span><Gift size={18} /> 6%</span><small>Complete</small></div>
+        <div className="completeMeter"><span>🎁 6%</span><small>Complete</small></div>
       </div>
       <div className="filters">
         {filters.map((name) => <button key={name} className={filter === name ? "active" : ""} onClick={() => setFilter(name)}>{name}</button>)}
       </div>
       <div className="cardGrid">
         {shownCards.map((card, index) => (
-          <div className={`countryCard ${card.className}`} key={`${card.country}-${index}`}>
+          <button className={`countryCard ${card.className}`} key={`${card.country}-${index}`}>
             <span className="rarity">{card.rarity}</span>
             <div className="cardArt">{card.className.includes("locked") ? <LockKeyhole size={44} /> : card.art}</div>
             <div className="cardCountry"><span>{card.flag}</span>{card.country}</div>
-          </div>
+          </button>
         ))}
       </div>
       <BottomNav screen="collection" setScreen={setScreen} />
@@ -236,14 +212,14 @@ export default function Home() {
   return (
     <main className="appShell">
       <div className="phoneFrame">
-        <div className="statusBar"><span>9:41</span><span>▮▮▮  WiFi  🔋</span></div>
+        <div className="statusBar"><span>9:41</span><span>▮▮▮ &nbsp;⌁&nbsp; <b>100</b></span></div>
         {screen === "map" && <WorldMap setScreen={setScreen} />}
         {screen === "quiz" && <QuizScreen setScreen={setScreen} />}
         {screen === "reward" && <RewardScreen setScreen={setScreen} />}
         {screen === "collection" && <CollectionScreen setScreen={setScreen} />}
         <div className="homeIndicator" />
       </div>
-      <div className="previewHint">Tap the map pins, answers and bottom navigation to preview the app.</div>
+      <div className="previewHint">Interactive mobile preview · tap pins, answers, rewards and collection tabs.</div>
     </main>
   );
 }
